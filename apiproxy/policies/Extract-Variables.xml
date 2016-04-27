@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="Extract-Variables">
+    <DisplayName>Extract Variables</DisplayName>
+    <Properties/>
+    <Header name="Authorization">
+        <Pattern ignoreCase="false">{basic-auth}</Pattern>
+    </Header>
+    <FormParam name="grant_type">
+        <Pattern ignoreCase="false">{grant_type}</Pattern>
+    </FormParam>
+    <FormParam name="assertion">
+        <Pattern ignoreCase="false">{assertion}</Pattern>
+    </FormParam>
+    <FormParam name="client_assertion_type">
+        <Pattern ignoreCase="false">{client_assertion_type}</Pattern>
+    </FormParam>
+    <FormParam name="code">
+        <Pattern ignoreCase="false">{code}</Pattern>
+    </FormParam>
+    <FormParam name="client_assertion">
+        <Pattern ignoreCase="false">{client_assertion}</Pattern>
+    </FormParam>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

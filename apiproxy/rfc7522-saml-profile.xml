@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="rfc7522-saml-profile">
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1461727666382</CreatedAt>
+    <CreatedBy>ssridhar@apigee.com</CreatedBy>
+    <Description>SAML 2.0 Profile for OAuth 2.0 Client Authentication and Authorization Grants</Description>
+    <DisplayName>rfc7522-saml-profile</DisplayName>
+    <LastModifiedAt>1461729276285</LastModifiedAt>
+    <LastModifiedBy>ssridhar@apigee.com</LastModifiedBy>
+    <Policies>
+        <Policy>Check-Verb-and-Content-Type</Policy>
+        <Policy>Create-Client-Cred-Req</Policy>
+        <Policy>Create-SAML-Payload</Policy>
+        <Policy>Decode-SAML</Policy>
+        <Policy>Extract-Variables</Policy>
+        <Policy>Generate-Access-Token</Policy>
+        <Policy>Raise-Fault-Invalid-Grant</Policy>
+        <Policy>Raise-Fault-Not-Implemented</Policy>
+        <Policy>Raise-Fault-Unknown-Request</Policy>
+        <Policy>Validate-SAML-Assertion</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://Base64.js</Resource>
+        <Resource>jsc://DecodeSAML.js</Resource>
+    </Resources>
+    <TargetServers/>
+    <TargetEndpoints/>
+    <validate>false</validate>
+</APIProxy>

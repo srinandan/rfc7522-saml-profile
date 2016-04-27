@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Create-SAML-Payload">
+    <DisplayName>Create SAML Payload</DisplayName>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">application/xml</Header>
+            <Header name="Authorization">{basic-auth}</Header>
+        </Headers>
+        <Payload contentType="application/xml">{SAMLAssertion}</Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="request"/>
+</AssignMessage>

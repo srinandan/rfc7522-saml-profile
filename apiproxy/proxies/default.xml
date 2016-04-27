@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>Check-Verb-and-Content-Type</Name>
+                <Condition>(request.verb != "POST") OR (request.header.Content-Type != "application/x-www-form-urlencoded")</Condition>
+            </Step>
+            <Step>
+                <Name>Extract-Variables</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="Authorization Grants">
+            <Description>Using SAML Assertions as Authorization Grants</Description>
+            <Request>
+                <Step>
+                    <Name>Decode-SAML</Name>
+                </Step>
+                <Step>
+                    <Name>Raise-Fault-Invalid-Grant</Name>
+                </Step>
+                <Step>
+                    <Name>Create-SAML-Payload</Name>
+                </Step>
+                <Step>
+                    <Name>Validate-SAML-Assertion</Name>
+                </Step>
+                <Step>
+                    <Name>Create-Client-Cred-Req</Name>
+                </Step>
+                <Step>
+                    <Name>Generate-Access-Token</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/") and (request.verb = "POST") and (grant_type = "urn:ietf:params:oauth:grant-type:saml2-bearer")</Condition>
+        </Flow>
+        <Flow name="Client Authentication">
+            <Description>Using SAML Assertions for Client Authentication</Description>
+            <Request>
+                <Step>
+                    <Name>Raise-Fault-Not-Implemented</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/") and (request.verb = "POST") and (grant_type = "authorization_code")</Condition>
+        </Flow>
+        <Flow name="Unknown Request">
+            <Description>Unknown Request</Description>
+            <Request>
+                <Step>
+                    <Name>Raise-Fault-Unknown-Request</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/token.oauth2</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>
