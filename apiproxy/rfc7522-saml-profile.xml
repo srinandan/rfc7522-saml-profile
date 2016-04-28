@@ -5,19 +5,26 @@
     <CreatedBy>ssridhar@apigee.com</CreatedBy>
     <Description>SAML 2.0 Profile for OAuth 2.0 Client Authentication and Authorization Grants</Description>
     <DisplayName>rfc7522-saml-profile</DisplayName>
-    <LastModifiedAt>1461729276285</LastModifiedAt>
+    <LastModifiedAt>1461851130393</LastModifiedAt>
     <LastModifiedBy>ssridhar@apigee.com</LastModifiedBy>
     <Policies>
         <Policy>Check-Verb-and-Content-Type</Policy>
+        <Policy>Create-Client-Auth-Access-Token</Policy>
         <Policy>Create-Client-Cred-Req</Policy>
+        <Policy>Create-SAML-Payload-for-Client-Auth</Policy>
         <Policy>Create-SAML-Payload</Policy>
         <Policy>Decode-SAML</Policy>
         <Policy>Extract-Variables</Policy>
+        <Policy>Generate-Access-Token-for-Client-Auth</Policy>
         <Policy>Generate-Access-Token</Policy>
         <Policy>Raise-Fault-Invalid-Grant</Policy>
         <Policy>Raise-Fault-Not-Implemented</Policy>
         <Policy>Raise-Fault-Unknown-Request</Policy>
+        <Policy>Setup-OAuth-Params</Policy>
+        <Policy>Validate-Auth-Grant-SAML</Policy>
+        <Policy>Validate-Client-Auth-SAML</Policy>
         <Policy>Validate-SAML-Assertion</Policy>
+        <Policy>Verify-Client-ID</Policy>
     </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>default</ProxyEndpoint>
@@ -25,6 +32,9 @@
     <Resources>
         <Resource>jsc://Base64.js</Resource>
         <Resource>jsc://DecodeSAML.js</Resource>
+        <Resource>jsc://create-client-auth-access-token.js</Resource>
+        <Resource>jsc://validate-auth-grant-saml.js</Resource>
+        <Resource>jsc://validate-client-auth.js</Resource>
     </Resources>
     <TargetServers/>
     <TargetEndpoints/>

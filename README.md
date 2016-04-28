@@ -23,4 +23,18 @@ RFC7522 supports two mechanisms for obtaining an OAuth token.
     assertion=PHNhbWxwOl...[omitted for brevity]...ZT4
     ```
 2. Using SAML Assertion for Client Authentication
-   TODO
+   The following example demonstrates a client authenticating using an
+   Assertion during the presentation of an authorization code grant in
+   an access token request (with extra line breaks for display purposes
+   only):
+   ```
+     POST /token.oauth2 HTTP/1.1
+     Host: as.example.com
+     Content-Type: application/x-www-form-urlencoded
+
+     grant_type=authorization_code&
+     code=n0esc3NRze7LTCu7iYzS6a5acc3f0ogp4&
+     client_assertion_type=urn%3Aietf%3Aparams%3Aoauth
+     %3Aclient-assertion-type%3Asaml2-bearer&
+     client_assertion=PHNhbW...[omitted for brevity]...ZT
+    ```

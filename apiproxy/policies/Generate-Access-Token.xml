@@ -2,7 +2,10 @@
 <OAuthV2 async="false" continueOnError="false" enabled="true" name="Generate-Access-Token">
     <DisplayName>Generate Access Token</DisplayName>
     <Properties/>
-    <Attributes/>
+    <Attributes>
+        <Attribute name="iss" ref="saml.issuer" display="true"/>
+        <Attribute name="sub" ref="saml.subject" display="true"/>
+    </Attributes>
     <ExternalAuthorization>false</ExternalAuthorization>
     <Operation>GenerateAccessToken</Operation>
     <SupportedGrantTypes>

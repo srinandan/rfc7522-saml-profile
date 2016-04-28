@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="Generate-Access-Token-for-Client-Auth">
+    <DisplayName>Generate Access Token for Client Auth</DisplayName>
+    <Properties/>
+    <Attributes>
+        <Attribute name="iss" ref="saml.issuer" display="true"/>
+        <Attribute name="sub" ref="saml.subject" display="true"/>
+    </Attributes>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>GenerateAccessTokenImplicitGrant</Operation>
+    <GenerateResponse enabled="false"/>
+    <ClientId>saml.subject</ClientId>
+    <ResponseType>response_type</ResponseType>
+    <RedirectUri>redirect_uri</RedirectUri>
+</OAuthV2>

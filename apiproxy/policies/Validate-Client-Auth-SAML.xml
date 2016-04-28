@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript async="false" continueOnError="false" enabled="true" timeLimit="200" name="Validate-Client-Auth-SAML">
+    <DisplayName>Validate Client Auth SAML</DisplayName>
+    <Properties/>
+    <IncludeURL>jsc://Base64.js</IncludeURL>
+    <ResourceURL>jsc://validate-client-auth.js</ResourceURL>
+</Javascript>

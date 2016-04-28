@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Setup-OAuth-Params">
+    <DisplayName>Setup OAuth Params</DisplayName>
+    <Properties/>
+    <AssignVariable>
+        <Name>grant_type</Name>
+        <Value>implicit</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>redirect_uri</Name>
+        <Value>https://apigee.com</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>response_type</Name>
+        <Value>token</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -27,12 +27,19 @@
                 </Step>
                 <Step>
                     <Name>Raise-Fault-Invalid-Grant</Name>
+                    <Condition>isValid = false</Condition>
                 </Step>
                 <Step>
                     <Name>Create-SAML-Payload</Name>
                 </Step>
                 <Step>
                     <Name>Validate-SAML-Assertion</Name>
+                </Step>
+                <Step>
+                    <Name>Validate-Auth-Grant-SAML</Name>
+                </Step>
+                <Step>
+                    <Name>Raise-Fault-Invalid-Grant</Name>
                 </Step>
                 <Step>
                     <Name>Create-Client-Cred-Req</Name>
@@ -49,6 +56,38 @@
             <Request>
                 <Step>
                     <Name>Raise-Fault-Not-Implemented</Name>
+                </Step>
+                <Step>
+                    <Name>Validate-Client-Auth-SAML</Name>
+                </Step>
+                <Step>
+                    <Name>Raise-Fault-Invalid-Grant</Name>
+                    <Condition>isValid = false</Condition>
+                </Step>
+                <Step>
+                    <Name>Create-SAML-Payload-for-Client-Auth</Name>
+                </Step>
+                <Step>
+                    <Name>Validate-SAML-Assertion</Name>
+                </Step>
+                <Step>
+                    <Name>Verify-Client-ID</Name>
+                </Step>
+                <Step>
+                    <Name>Validate-Auth-Grant-SAML</Name>
+                </Step>
+                <Step>
+                    <Name>Raise-Fault-Invalid-Grant</Name>
+                    <Condition>isValid = false</Condition>
+                </Step>
+                <Step>
+                    <Name>Setup-OAuth-Params</Name>
+                </Step>
+                <Step>
+                    <Name>Generate-Access-Token-for-Client-Auth</Name>
+                </Step>
+                <Step>
+                    <Name>Create-Client-Auth-Access-Token</Name>
                 </Step>
             </Request>
             <Response/>
